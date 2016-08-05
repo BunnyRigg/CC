@@ -1,0 +1,11 @@
+name: CreatureCraft
+main: me.bunny.main.Main
+version: 1.0
+author: BunnyRigg
+commands:
+    fireball:
+        description: Throw a fireball.
+    particle:
+        description: Choose your favorite particle effect!
+    effects:
+    vote:
