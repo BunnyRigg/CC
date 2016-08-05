@@ -13,6 +13,7 @@ import me.bunny.listeners.ChatFilter;
 import me.bunny.listeners.EntityExplosion;
 import me.bunny.listeners.InvClick;
 import me.bunny.listeners.PlayerCommand;
+import me.bunny.listeners.PlayerJoin;
 import me.bunny.listeners.PlayerMove;
 import me.bunny.listeners.RightClick;
 
@@ -33,6 +34,7 @@ public class Main extends JavaPlugin {
 		Bukkit.getServer().getPluginManager().registerEvents(new PlayerMove(this), this);
 		Bukkit.getServer().getPluginManager().registerEvents(new InvClick(this), this);
 		Bukkit.getServer().getPluginManager().registerEvents(new ChatFilter(this), this);
+		Bukkit.getServer().getPluginManager().registerEvents(new PlayerJoin(this), this);
 		getConfig().options().copyDefaults(true);
 		saveConfig();
 	}
