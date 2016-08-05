@@ -2,6 +2,7 @@ package me.bunny.main;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.mcsg.double0negative.tabapi.TabAPI;
 
 import de.slikey.effectlib.EffectManager;
 import me.bunny.cmds.EffectsCmd;
@@ -18,6 +19,7 @@ import me.bunny.listeners.RightClick;
 public class Main extends JavaPlugin {
 
 	public static EffectManager effectManager;
+	public static TabAPI tabapi;
 
 	public void onEnable() {
 		effectManager = new EffectManager(this);

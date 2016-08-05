@@ -4,5 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 	<classpathentry kind="lib" path="C:/Users/Chase/Desktop/craftbukkit-1.7.10-R0.1-20140808.005431-8.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Chase/Desktop/EffectLib-5.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chase/Desktop/Minecraft 1.7.10 Server (64Bits)/plugins/TabAPI.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

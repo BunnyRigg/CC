@@ -63,92 +63,84 @@ public class InvClick implements Listener {
 			}
 		}
 		if(e.getInventory().getTitle().equalsIgnoreCase("§c§lAdvanced Particle Selector")) {
-			if(e.getCurrentItem().getType().equals(Material.REDSTONE_BLOCK)) {
-				if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§c§lClear all effects!")) {
-					Main.effectManager.cancel(true);
-					player.closeInventory();
-					player.sendMessage(Prefix.prefix + "§aAll effects have been cleared!");
-				}
-			}else{
-				if(e.getCurrentItem().getType().equals(Material.PAPER)) {
-					if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§4§lVortex")) {
-						if(player.hasPermission("creaturecraft.particles.advanced.vortex")) {
+			if(e.getCurrentItem().getType().equals(Material.PAPER)) {
+				if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§4§lVortex")) {
+					if(player.hasPermission("creaturecraft.particles.advanced.vortex")) {
+						Firefly.fireflylist.remove(player.getName());
+						Smoke.smokelist.remove(player.getName());
+						Blood.bloodlist.remove(player.getName());
+						VortexEffect vortexeff = new VortexEffect(Main.effectManager);
+						vortexeff.setEntity(player);
+						vortexeff.iterations = 10 * 6;
+						vortexeff.start();
+						player.closeInventory();
+						player.sendMessage(Prefix.prefix + "§aVortex effect started!");
+					}
+				}else{
+					if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§4§lHelix")) {
+						if(player.hasPermission("creaturecraft.particles.advanced.helix")) {
 							Firefly.fireflylist.remove(player.getName());
 							Smoke.smokelist.remove(player.getName());
 							Blood.bloodlist.remove(player.getName());
-							VortexEffect vortexeff = new VortexEffect(Main.effectManager);
-							vortexeff.setEntity(player);
-							vortexeff.iterations = 10 * 6;
-							vortexeff.start();
+							HelixEffect helix = new HelixEffect(Main.effectManager);
+							helix.setEntity(player);
+							helix.iterations = 10 * 6;
+							helix.radius = 2;
+							helix.start();
 							player.closeInventory();
-							player.sendMessage(Prefix.prefix + "§aVortex effect started!");
+							player.sendMessage(Prefix.prefix + "§aHelix effect started!");
 						}
 					}else{
-						if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§4§lHelix")) {
-							if(player.hasPermission("creaturecraft.particles.advanced.helix")) {
+						if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§4§lShield")) {
+							if(player.hasPermission("creaturecraft.particles.advanced.shield")) {
 								Firefly.fireflylist.remove(player.getName());
 								Smoke.smokelist.remove(player.getName());
 								Blood.bloodlist.remove(player.getName());
-								HelixEffect helix = new HelixEffect(Main.effectManager);
-								helix.setEntity(player);
-								helix.iterations = 10 * 6;
-								helix.radius = 2;
-								helix.start();
+								ShieldEffect shield = new ShieldEffect(Main.effectManager);
+								shield.setEntity(player);
+								shield.iterations = 10 * 6;
+								shield.start();
 								player.closeInventory();
-								player.sendMessage(Prefix.prefix + "§aHelix effect started!");
+								player.sendMessage(Prefix.prefix + "§aShield effect started!");
 							}
 						}else{
-							if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§4§lShield")) {
-								if(player.hasPermission("creaturecraft.particles.advanced.shield")) {
+							if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§4§lLove")) {
+								if(player.hasPermission("creaturecraft.particles.advanced.love")) {
 									Firefly.fireflylist.remove(player.getName());
 									Smoke.smokelist.remove(player.getName());
 									Blood.bloodlist.remove(player.getName());
-									ShieldEffect shield = new ShieldEffect(Main.effectManager);
-									shield.setEntity(player);
-									shield.iterations = 10 * 6;
-									shield.start();
+									LoveEffect Love = new LoveEffect(Main.effectManager);
+									Love.setEntity(player);
+									Love.iterations = 10 * 6;
+									Love.start();
 									player.closeInventory();
-									player.sendMessage(Prefix.prefix + "§aShield effect started!");
+									player.sendMessage(Prefix.prefix + "§aLove effect started!");
 								}
 							}else{
-								if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§4§lLove")) {
+								if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§4§lStar")) {
 									if(player.hasPermission("creaturecraft.particles.advanced.love")) {
 										Firefly.fireflylist.remove(player.getName());
 										Smoke.smokelist.remove(player.getName());
 										Blood.bloodlist.remove(player.getName());
-										LoveEffect Love = new LoveEffect(Main.effectManager);
-										Love.setEntity(player);
-										Love.iterations = 10 * 6;
-										Love.start();
+										StarEffect star = new StarEffect(Main.effectManager);
+										star.setEntity(player);
+										star.iterations = 10 * 6;
+										star.start();
 										player.closeInventory();
-										player.sendMessage(Prefix.prefix + "§aLove effect started!");
+										player.sendMessage(Prefix.prefix + "§aStar effect started!");
 									}
 								}else{
-									if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§4§lStar")) {
-										if(player.hasPermission("creaturecraft.particles.advanced.love")) {
+									if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§4§lMusic")) {
+										if(player.hasPermission("creaturecraft.particles.advanced.music")) {
 											Firefly.fireflylist.remove(player.getName());
 											Smoke.smokelist.remove(player.getName());
 											Blood.bloodlist.remove(player.getName());
-											StarEffect star = new StarEffect(Main.effectManager);
-											star.setEntity(player);
-											star.iterations = 10 * 6;
-											star.start();
+											MusicEffect music = new MusicEffect(Main.effectManager);
+											music.setEntity(player);
+											music.iterations = 10 * 6;
+											music.start();
 											player.closeInventory();
-											player.sendMessage(Prefix.prefix + "§aStar effect started!");
-										}
-									}else{
-										if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§4§lMusic")) {
-											if(player.hasPermission("creaturecraft.particles.advanced.music")) {
-												Firefly.fireflylist.remove(player.getName());
-												Smoke.smokelist.remove(player.getName());
-												Blood.bloodlist.remove(player.getName());
-												MusicEffect music = new MusicEffect(Main.effectManager);
-												music.setEntity(player);
-												music.iterations = 10 * 6;
-												music.start();
-												player.closeInventory();
-												player.sendMessage(Prefix.prefix + "§aMusic effect started!");
-											}
+											player.sendMessage(Prefix.prefix + "§aMusic effect started!");
 										}
 									}
 								}
