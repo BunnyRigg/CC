@@ -16,6 +16,7 @@ public class VoteCmd implements CommandExecutor {
 		
 	}
 	
+	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
 		Player player = (Player) sender;
 		VoteGUI.vote(player);

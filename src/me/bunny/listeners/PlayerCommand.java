@@ -5,6 +5,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 
+import me.bunny.guis.VoteGUI;
 import me.bunny.main.Main;
 
 public class PlayerCommand implements Listener {
@@ -18,6 +19,10 @@ public class PlayerCommand implements Listener {
 	@EventHandler
 	public void onPlayerCommand(PlayerCommandPreprocessEvent e) {
 		Player player = (Player) e.getPlayer();
+		if(e.getMessage().equalsIgnoreCase("/vote")) {
+			e.setCancelled(true);
+			VoteGUI.vote(player);
+		}
 		if(e.getMessage().equalsIgnoreCase("/team save")) {
 			if(player.isOp()) {
 				
